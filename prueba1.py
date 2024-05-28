@@ -60,7 +60,7 @@ print(Back.WHITE + Fore.BLUE + "⌛ procesando....")
 
 # URL del sitio web que deseas procesar
 url = 'https://ingresosjudiciales.csj.gov.py/LiquidacionesWeb/loginAbogados.seam'
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options) # driver = webdriver.Chrome()
 driver.set_window_size(1200, 1000)
 driver.get(url)
 
