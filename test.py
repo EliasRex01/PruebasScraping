@@ -30,8 +30,8 @@ options.add_argument('--headless')
 options.add_argument('--disable-dev-shm-usage')
 
 # Ruta específica de Chrome y ChromeDriver
-options.binary_location = '/usr/bin/chrome.exe'
-chrome_service = Service('/usr/bin/chromedriver.exe')
+options.binary_location = '/usr/bin/google-chrome'
+chrome_service = Service('/usr/local/bin/chromedriver')
 
 # Inicializar el WebDriver
 driver = webdriver.Chrome(service=chrome_service, options=options)
