@@ -93,10 +93,7 @@ tipo_doc_demandante = Select(wait.until(EC.element_to_be_clickable((By.ID, 'juic
 tipo_doc_demandante.select_by_value('1')
 time.sleep(1)
 nro_doc_demandante = driver.find_element(By.ID, 'juicioFormId:demandantesListId:0:numeroDocumentoContribuyenteId')
-nro
-python
-Copiar código
-_doc_demandante.send_keys('80111738-0')
+nro_doc_demandante.send_keys('80111738-0')
 
 # Agregar demandado
 wait.until(EC.presence_of_element_located((By.XPATH, '/html/body/table/tbody/tr[5]/td/div/div/table/tbody/tr/td[2]/table/tbody/tr[6]/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td/form/span/table[1]/tbody/tr[6]/td/table/tbody/tr/td[2]/a'))).click()
