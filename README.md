@@ -15,3 +15,5 @@ chmod +x /usr/bin/chromedriver
 
 consultar:
 https://developer.chrome.com/docs/chromedriver/help/chrome-doesnt-start?hl=es-419
+https://medium.com/@sshevlyagin/handling-exceptions-and-browser-crashes-in-selenium-c04d587965c7
+https://groups.google.com/g/selenium-users/c/GfVZZ5XaRc0
