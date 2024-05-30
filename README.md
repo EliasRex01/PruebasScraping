@@ -10,3 +10,8 @@ chmod +x /usr/bin/chromedriver
 # que hacer en selenium 4.21.0
 * Add CDP for Chrome 125 and remove 122
 * Moving ignore_local_proxy_environment_variables to BaseOptions (#13926)
+
+
+
+consultar:
+https://developer.chrome.com/docs/chromedriver/help/chrome-doesnt-start?hl=es-419
