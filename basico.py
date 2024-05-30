@@ -13,7 +13,7 @@ options.add_argument('--window-size=1920,1080')
 
 # Ruta específica de Chrome y ChromeDriver
 options.binary_location = '/usr/bin/google-chrome'
-chrome_service = Service('/usr/local/bin/chromedriver', log_path='/root/PruebasScraping/chromedriver.log')  # Cambia '/path/to/chromedriver.log' a la ruta deseada para el archivo de log
+chrome_service = Service('/usr/bin/chromedriver', log_path='/root/PruebasScraping/chromedriver.log')  # Cambia '/path/to/chromedriver.log' a la ruta deseada para el archivo de log
 
 # Inicializar el WebDriver
 driver = webdriver.Chrome(service=chrome_service, options=options)
