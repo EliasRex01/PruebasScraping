@@ -7,20 +7,19 @@ options = Options()
 options.add_argument('--no-sandbox')
 options.add_argument('--headless')
 options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--remote-debugging-port=9222')
 options.add_argument('--disable-gpu')
-options.add_argument('--window-size=1920,1080')
+options.ignore_local_proxy_environment_variables()  # Mover esta configuración a BaseOptions
 
 # Ruta específica de Chrome y ChromeDriver
 options.binary_location = '/usr/bin/google-chrome'
-chrome_service = Service('/usr/bin/chromedriver', log_path='/root/PruebasScraping/chromedriver.log')  # Cambia '/path/to/chromedriver.log' a la ruta deseada para el archivo de log
+chrome_service = Service('/usr/bin/chromedriver')
 
 # Inicializar el WebDriver
 driver = webdriver.Chrome(service=chrome_service, options=options)
 
-# Abrir una página y verificar el título
-driver.get('http://www.google.com')
-print(driver.title)
-
-# Cerrar el WebDriver
-driver.quit()
+# Probar la configuración básica
+try:
+    driver.get('https://www.google.com')
+    print("Successfully opened Google in headless mode.")
+finally:
+    driver.quit()
