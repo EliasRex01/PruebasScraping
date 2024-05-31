@@ -1,6 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+import contextlib
+from browsermobproxy import Server
+from selenium.webdriver import DesiredCapabilities
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, WebDriverException
+import argparse
+import traceback
+import time
+
+from selenium_exceptions import settings
 
 # Configurar las opciones de ChromeDriver
 options = Options()
