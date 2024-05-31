@@ -19,3 +19,8 @@ https://medium.com/@sshevlyagin/handling-exceptions-and-browser-crashes-in-selen
 https://groups.google.com/g/selenium-users/c/GfVZZ5XaRc0
 https://python-forum.io/thread-14766.html
 https://github.com/SeleniumHQ/selenium/issues/12841
+https://automated-testing.info/t/skipayutsya-testy-s-oshibkoj-chrome-failed-to-start-exited-abnormally-unknown-error-devtoolsactiveport-file-doesnt-exist/25127/2
+https://groups.google.com/g/robotframework-users/c/4iyQGFQHEx4?pli=1
+https://community.render.com/t/selenium-error-chrome-failed-to-start-exited-abnormally-unknown-error-devtoolsactiveport-file-doesnt-exist/14564
+https://www.pythonanywhere.com/forums/topic/33080/
+https://github.com/SeleniumHQ/selenium/issues/12973
