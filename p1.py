@@ -1,52 +1,42 @@
-import time
-import traceback
-import argparse
-from selenium import webdriver
-from selenium.webdriver import DesiredCapabilities
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, WebDriverException
+from playwright.sync_api import sync_playwright
 
-def retry(func, *args):
-    retries = 10
-    while retries > 0:
-        try:
-            return func(*args)
-        except (NoSuchElementException, TimeoutException, WebDriverException) as e:
-            if retries > 0:
-                retries -= 1
-                print(f"Retries left {retries}, Continuing on {traceback.format_exc()}")
-                time.sleep(5)
-            else:
-                raise e
+def buscar_en_google(term):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        page = browser.new_page()
+        
+        # Navegar a Google
+        page.goto('https://www.google.com')
 
-def demo():
-    # Configurar las opciones de ChromeDriver
-    options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--headless')
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--remote-debugging-port=9222')
-    options.add_argument('--disable-extensions')
-    options.add_argument('--disable-background-networking')
-    options.ignore_local_proxy_environment_variables()
+        # palabra de busqueda y presionar Enter
+        page.fill('input[name="q"]', term)
+        page.press('input[name="q"]', 'Enter')
 
-    # Ruta específica de Chrome y ChromeDriver
-    options.binary_location = '/usr/bin/google-chrome'
-    chrome_service = Service('/usr/bin/chromedriver')
+        # Esperar a que aparezcan los resultados
+        page.wait_for_selector('div#search')
 
-    # Inicializar el WebDriver
-    driver = webdriver.Chrome(service=chrome_service, options=options)
+        # Obtener la cantidad de resultados
+        resultados = page.query_selector_all('div.g')
+        cantidad_resultados = len(resultados)
 
-    # Probar la configuración básica
-    try:
-        driver.get('https://www.google.com')
-        print("Successfully opened Google in headless mode.")
-    finally:
-        driver.quit()
+        # Cerrar el navegador
+        browser.close()
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('config', type=str, nargs='?', help='the config class')
-    args = parser.parse_args()
+        return cantidad_resultados
+
+if __name__ == "__main__":
+    termino_busqueda = "ardillas"
+    cantidad_resultados = buscar_en_google(termino_busqueda)
+    print(f"Cantidad de resultados para '{termino_busqueda}': {cantidad_resultados}")
+
+# bibliotecas necesarias ejecutando `pip install playwright`. 
+# se abre una ventana del navegador (cambiar `headless=True` a `headless=False`)
+
+
+
+
+
+
+
+
+C
