@@ -37,11 +37,12 @@ def demo():
     chrome_service = Service('/usr/bin/chromedriver')
 
     # Inicializar el WebDriver
-    driver = webdriver.Chrome(service=chrome_service, options=options)
+    driver = webdriver.Chrome(options=options)
 
     # Probar la configuración básica
     try:
         driver.get('https://www.google.com')
+        print(driver.title)
         print("Successfully opened Google in headless mode.")
     finally:
         driver.quit()
