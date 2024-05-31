@@ -51,4 +51,4 @@ if __name__ == '__main__':
     parser.add_argument('config', type=str, nargs='?', help='the config class')
     args = parser.parse_args()
 
-retry(demo)
+    retry(demo)
