@@ -18,3 +18,4 @@ https://developer.chrome.com/docs/chromedriver/help/chrome-doesnt-start?hl=es-41
 https://medium.com/@sshevlyagin/handling-exceptions-and-browser-crashes-in-selenium-c04d587965c7
 https://groups.google.com/g/selenium-users/c/GfVZZ5XaRc0
 https://python-forum.io/thread-14766.html
+https://github.com/SeleniumHQ/selenium/issues/12841
