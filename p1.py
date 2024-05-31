@@ -1,7 +1,6 @@
 import time
 import traceback
 import argparse
-import time
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.service import Service
@@ -51,12 +50,3 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('config', type=str, nargs='?', help='the config class')
     args = parser.parse_args()
-
-    # Assuming you have a settings module and config classes defined
-    import settings
-    config = getattr(settings, args.config, None)
-    if config:
-        retry(demo)
-    else:
-        print("Config not found. Please provide a valid config class.")
-        parser.print_help()
