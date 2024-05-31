@@ -52,7 +52,7 @@ print(Back.WHITE + Fore.BLUE + "⌛ procesando....")
 url = 'https://ingresosjudiciales.csj.gov.py/LiquidacionesWeb/loginAbogados.seam'
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    browser = p.chromium.launch(headless=True)
     page = browser.new_page()
     page.set_viewport_size({"width": 1200, "height": 1000})
     page.goto(url)
