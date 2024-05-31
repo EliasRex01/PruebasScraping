@@ -2,7 +2,6 @@ import time
 import traceback
 import argparse
 import time
-from browsermobproxy import Server
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.service import Service
