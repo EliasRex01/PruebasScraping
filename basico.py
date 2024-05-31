@@ -27,7 +27,8 @@ options.binary_location = '/usr/bin/google-chrome'
 chrome_service = Service('/usr/bin/chromedriver')
 
 # Inicializar el WebDriver
-driver = webdriver.Chrome(service=chrome_service, options=options)
+# driver = webdriver.Chrome(service=chrome_service, options=options)
+WebDriver driver = new ChromeDriver(options);
 
 # Probar la configuración básica
 try:
