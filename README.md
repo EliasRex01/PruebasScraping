@@ -11,6 +11,10 @@ chmod +x /usr/bin/chromedriver
 * Add CDP for Chrome 125 and remove 122
 * Moving ignore_local_proxy_environment_variables to BaseOptions (#13926)
 
+./cambio.py
+
+V66 de Firefox funciona en vps supuestamente
+
 
 
 consultar:
