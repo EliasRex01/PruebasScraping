@@ -13,7 +13,7 @@ chmod +x /usr/bin/chromedriver
 
 ./cambio.py
 
-V66 de Firefox funciona en vps supuestamente
+--V66 de Firefox funciona en vps supuestamente
 
 
 
